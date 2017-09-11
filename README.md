@@ -5,7 +5,7 @@ Simple TAS Tool for the game Standby strongly based on [this](https://github.com
 ## Installation
 
 * Put a TAS file named "Standby.tas" in the same folder as the .exe of the game
-* Download all files from [here](../Installstuff) and place them into the ...STANDBY\Standby_Data\Managed folder 
+* Download all files from [here](https://github.com/gatchrat/Standby-TAS/tree/master/Installstuff) and place them into the ...STANDBY\Standby_Data\Managed folder 
 (backing up the files which are being replaced is recommended)
 
 ## Controls
