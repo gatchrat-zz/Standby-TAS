@@ -1,0 +1,109 @@
+PlayerScrip.Update()
+Added: Manager.UpdateInputs();
+Changed: 	this.h = Input.GetAxisRaw("Horizontal"); 
+		to 
+
+		if (TAS.Manager.Running && !TAS.Manager.Recording) {
+			this.h = TAS.Manager.GetAxisRaw("Horizontal");
+		}
+		else{
+
+			this.h = Input.GetAxisRaw("Horizontal");
+		}
+
+---------------------------------------------------------------------------------
+
+		if (!IntroScript.tablet && Input.GetButtonDown("Jump") && !PlayerScript.dead)
+		{
+			this.Jump();
+		}
+		to
+		
+		if (TAS.Manager.Running && !TAS.Manager.Recording) {
+				if (!IntroScript.tablet &&TAS.Manager.GetButtonDown(0) && !PlayerScript.dead)
+				{
+					this.Jump();
+				}
+			}
+		else{
+			if (!IntroScript.tablet && Input.GetButtonDown("Jump") && !PlayerScript.dead)
+			{
+				this.Jump();
+			}
+		}
+
+
+---------------------------------------------------------------------------------
+
+
+		if (!IntroScript.tablet && Input.GetButtonDown("Action"))
+		{
+			this.Action();
+		}
+		to
+
+		if (Manager.Running && !Manager.Recording)
+		{
+			if (!IntroScript.tablet && Manager.GetButtonDown(3))
+			{
+				this.Action();
+			}
+		}
+		else{
+
+			if (!IntroScript.tablet && Input.GetButtonDown("Action"))
+			{
+				this.Action();
+			}
+		}
+
+
+---------------------------------------------------------------------------------
+
+
+
+		if (!PlayerScript.dead && Input.GetButtonDown("Back") && !UIM.paused)
+		{
+			this.InstaRestart();
+		}
+		to
+		if (Manager.Running && !Manager.Recording)
+		{
+			if (!PlayerScript.dead && Manager.GetButtonDown(5) && !UIM.paused)
+			{
+				this.InstaRestart();
+			}
+		}
+		else{
+			if (!PlayerScript.dead && Input.GetButtonDown("Back") && !UIM.paused)
+			{
+				this.InstaRestart();
+			}
+		}
+
+
+---------------------------------------------------------------------------------
+
+
+
+
+		if (Input.GetButtonDown("Action"))
+		{
+			this.act = true;
+		}
+		to
+		if (Manager.Running && !Manager.Recording)
+		{
+			if ( Manager.GetButtonDown(3) )
+			{
+				this.act = true;
+			}
+		}
+		else{
+			if (Input.GetButtonDown("Action"))
+			{
+				this.act = true;
+			}
+		}
+
+
